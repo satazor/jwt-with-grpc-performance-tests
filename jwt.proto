@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package jwt.services;
+
+option go_package="jwt.services";
+
+service JwtService {
+  rpc GenerateJwt(GenerateJwtRequest) returns (GenerateJwtResponse);
+}
+
+message GenerateJwtRequest {
+  string algorithm = 1;
+}
+
+message GenerateJwtResponse {
+  string jwt = 1;
+  string sub = 2;
+}
